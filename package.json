@@ -1,0 +1,12 @@
+{
+  "name": "paseo-chat-titles",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Automatic, configurable chat titles for Paseo using your existing Codex or Claude CLI login.",
+  "license": "MIT",
+  "repository": {"type": "git", "url": "https://github.com/iarmankhan/paseo-chat-titles.git"},
+  "engines": {"node": ">=22"},
+  "files": ["paseo-plugin.json", "OVERVIEW.md", "README.md", "LICENSE", "index.server.ts", "index.client.tsx", "server/", "client/", "shared/", "assets/"],
+  "scripts": {"typecheck": "tsc --noEmit", "test": "tsx --test server/*.test.ts"},
+  "devDependencies": {"@getpaseo/plugin": "0.12.0", "@types/node": "^22.0.0", "@types/react": "~19.2.0", "react": "19.1.0", "react-native": "0.81.5", "zod": "^4.4.3", "tsx": "^4.20.0", "typescript": "^5.9.3"}
+}
