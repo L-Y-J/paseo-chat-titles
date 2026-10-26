@@ -1,0 +1,19 @@
+paseo-plugin.json
+  s_03635d5aa1f353::t_0eb3436cd32b64 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "6225f27795e8954bef60eca2fa4cf5bdb354dc53",
+  "prompts": {},
+  "sessions": {
+    "s_03635d5aa1f353": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a1785d-fe52-7179-810c-6d3bd58cbdfe",
+        "model": "deepseek-deepseek-v4.1-flash-fast"
+      },
+      "human_author": "liyongjie.103 <liyongjie.103@jd.com>"
+    }
+  }
+}
