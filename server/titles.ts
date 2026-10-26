@@ -42,7 +42,7 @@ export function registerTitles(server: PluginServerContext, readSettings: () => 
     running.set(event.agent.id, abort);
     const cancel = () => abort.abort();
     context.signal.addEventListener("abort", cancel, { once: true });
-    const timer = setTimeout(cancel, 26000);
+    const timer = setTimeout(cancel, 66000);
     try {
       await ready;
       if (abort.signal.aborted || !healthy) return;

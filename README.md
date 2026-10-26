@@ -32,7 +32,7 @@ Provider access and usage follow your CLI login and plan. This is not an API pro
 - Waits through greetings such as “hi” until a meaningful request appears.
 - Generates one title per chat. Preserves other names and skips subagents, archived chats and failed/canceled turns.
 - Does not bulk-rename history. An eligible existing chat can receive a title on its next completed turn.
-- Limits helpers to two at a time, 26 seconds total and three attempts per chat. If busy, it tries on a later completed turn.
+- Limits helpers to two at a time, 66 seconds total and three attempts per chat. If busy, it tries on a later completed turn.
 
 Manual naming is recognized conservatively by comparing the title with Paseo's initial naming convention and refreshing it before an update. Paseo 0.12 has no atomic title compare-and-set: a manual rename in the tiny interval after the final check can still race. A title exactly matching the automatic initial title is indistinguishable from an unchanged default.
 

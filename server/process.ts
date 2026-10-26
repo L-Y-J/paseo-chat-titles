@@ -9,9 +9,10 @@ export function command(binary: string, args: string[], options: { cwd: string; 
       env: Object.fromEntries(Object.entries(process.env).filter(([key]) =>
         !/^(ANTHROPIC_|CLAUDE_CODE_OAUTH_TOKEN|CLAUDECODE$|PASEO_AGENT_|PASEO_PARENT_|AWS_|OPENAI_)/.test(key))),
     });
-    let output = "", overflow = false;
+    let output = "", overflow = false, timedOut = false;
     const stop = () => { child.kill("SIGKILL"); };
-    const timer = setTimeout(stop, options.timeoutMs ?? 20000);
+    // A cold Codex start was measured at ~19.4s, too close to the old 20s deadline.
+    const timer = setTimeout(() => { timedOut = true; stop(); }, options.timeoutMs ?? 60000);
     options.signal.addEventListener("abort", stop, { once: true });
     child.stdout.on("data", chunk => {
       output += chunk.toString();
@@ -24,6 +25,9 @@ export function command(binary: string, args: string[], options: { cwd: string; 
     child.on("close", code => {
       cleanup();
       if (code === 0 && !overflow && !options.signal.aborted) resolve(output);
+      // A helper killed by our own deadline may already have printed a complete
+      // answer; hand the partial output to the parser instead of discarding it.
+      else if (timedOut && !overflow && !options.signal.aborted && output.trim() !== "") resolve(output);
       else reject(new Error(`Title command failed (${code ?? "timeout/canceled"})`));
     });
     child.stdin.on("error", () => {});

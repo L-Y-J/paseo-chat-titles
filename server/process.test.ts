@@ -15,6 +15,13 @@ test("timeout kills hung helpers", async () => {
     cwd: tmpdir(), signal: new AbortController().signal, timeoutMs: 100,
   }), /failed/);
 });
+test("timeout keeps output the helper already printed", async () => {
+  // /bin/sh writes at once; `node -e` can take ~900ms just to boot here.
+  const output = await command("/bin/sh", ["-c", "printf '{\"title\":\"ok\"}'; exec sleep 30"], {
+    cwd: tmpdir(), signal: new AbortController().signal, timeoutMs: 300,
+  });
+  assert.equal(output, '{"title":"ok"}');
+});
 test("cleanup abort cancels active helpers", async () => {
   const abort = new AbortController();
   const result = command(process.execPath, ["-e", "setInterval(()=>{},1000)"], {
