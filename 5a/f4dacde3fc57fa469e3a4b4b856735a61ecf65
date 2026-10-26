@@ -1,0 +1,26 @@
+server/process.ts
+  s_371cf82aaca8b6::t_06ca62c9eab513 12,14-15,28-30
+server/process.test.ts
+  s_371cf82aaca8b6::t_8d385329663ca9 19-23
+  s_371cf82aaca8b6::t_dae1342b495f2b 18,24
+server/titles.ts
+  s_371cf82aaca8b6::t_c34b11cf030d13 45
+README.md
+  s_371cf82aaca8b6::t_3dd8511df00997 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "5af4dacde3fc57fa469e3a4b4b856735a61ecf65",
+  "prompts": {},
+  "sessions": {
+    "s_371cf82aaca8b6": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a178cb-d544-7094-8f66-21e250664710",
+        "model": "DeepSeek-V4.1-Flash-A-joybuilder"
+      },
+      "human_author": "liyongjie.103 <liyongjie.103@jd.com>"
+    }
+  }
+}
