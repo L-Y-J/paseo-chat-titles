@@ -1,0 +1,21 @@
+paseo-plugin.json
+  s_003c0447a07149::t_0d8a44458c168d 6
+README.md
+  s_003c0447a07149::t_d4bc83cfa0020d 21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "a64450b47ba93eace0ae8c35f1e30a7d6d012c39",
+  "prompts": {},
+  "sessions": {
+    "s_003c0447a07149": {
+      "agent_id": {
+        "tool": "pi",
+        "id": "01a18cde-6cbb-7651-99b2-8eeb5b52b3b0",
+        "model": "deepseek-flash"
+      },
+      "human_author": "liyongjie.103 <liyongjie.103@jd.com>"
+    }
+  }
+}
