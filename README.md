@@ -18,7 +18,7 @@ Open **Settings → Plugins → chat-titles → actions menu → Chat Titles**. 
 
 ## Requirements
 
-- Paseo daemon and client **0.12.x through 0.14.x**.
+- Paseo daemon and client **0.12.0 or later**.
 - Linux or macOS host with Node.js 22 or later. Windows is not currently supported.
 - The selected CLI installed and authenticated **as the daemon user**. Codex was verified with 0.162.1; older versions may lack the isolation flags. Claude needs the print, structured-output, strict MCP, settings-source and no-session-persistence options used in `server/process.ts`.
 - `paseo` and the selected CLI on the daemon's absolute `PATH`, `~/.local/bin`, or a standard Homebrew/system binary directory. The plugin does not download or install CLIs.

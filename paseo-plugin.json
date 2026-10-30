@@ -3,5 +3,5 @@
   "name": "Chat Titles",
   "description": "Generate useful chat titles with your chosen Codex or Claude model, without changing working-agent prompts or MCPs.",
   "media": ["assets/settings.png"],
-  "requirements": {"paseo": ">=0.12.0 <0.15.0"}
+  "requirements": {"paseo": ">=0.12.0"}
 }
